@@ -4,9 +4,11 @@ let win
 
 const path = require('path')
 var APP_PATH = path.resolve('__dirname', '../index.html')
+
 function createWindow () {
   win = new BrowserWindow()
   win.loadURL(APP_PATH)
+  // win.loadURL('index.html')
   win.on('close', () => {
     win = null
   })

@@ -10,7 +10,7 @@
             "request": "launch",
             "name": "Electron Debug",
             "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron",
-            "program": "${workspaceFolder}/main.js",
+            "program": "${workspaceFolder}/.tmp/main/index.js",
             "protocol": "legacy"
         },
         {

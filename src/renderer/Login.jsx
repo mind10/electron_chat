@@ -1,7 +1,9 @@
 import React from 'react'
-import { Link, hashHistory } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Errors from './Errors'
 import firebase from 'firebase'
+
+// const history = createHashHistory()
 
 const FORM_STYLE = {
   margin: '0 auto',
@@ -42,7 +44,11 @@ export default class Login extends React.Component {
     e.preventDefault()
     if (!email.length) {
       isValid = false
-      errors.push(`Email can't be blank.`)
+      errors.push("Email can't be blank.")
+    }
+    if (!password.length) {
+      isValid = false
+      errors.push("Password can't be blank.")
     }
     if (!isValid) {
       // 필수 입력 유효성 검사를 통과하지 못하면 오류 출력하기
@@ -56,7 +62,8 @@ export default class Login extends React.Component {
       window.localStorage.userEmail = email
       window.localStorage.userPassword = password
       // 채팅방 목록 화면으로 이동하기
-      hashHistory.push('/rooms')
+      // this.props.history.push('/rooms')
+      // history.push('/rooms')
     }).catch(() => {
       // Firebase에서 로그인 오류가 발생하는 경우
       this.setState({ errors: ['Incorrect email or password.'] })

@@ -3,7 +3,7 @@ import createWindow from './createWindow'
 import setAppMenu from './setAppMenu'
 
 app.on('ready', () => {
-  // setAppMenu()
+ // setAppMenu()
   createWindow()
 })
 
